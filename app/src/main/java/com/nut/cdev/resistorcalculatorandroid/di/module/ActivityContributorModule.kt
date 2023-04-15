@@ -16,7 +16,7 @@ abstract class ActivityContributorModule {
 //    abstract fun bindSplashLoginActivity(): SplashLoginActivity
 
     @PerActivity
-    @ContributesAndroidInjector(modules = [FixedResistorActivityModule::class])
+    @ContributesAndroidInjector(modules = [FixedResistorActivityModule::class, FragmentBuildersModule::class])
     abstract fun bindFixedResistorActivity(): FixedResistorActivity
 
     @PerActivity

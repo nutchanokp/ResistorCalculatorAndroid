@@ -1,187 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fixed_resistor.fragment.FixedIVResistorFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <data>
+
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        tools:context=".ui.fixed_resistor.fragment.FixedIVResistorFragment">
 
-        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="FixedIVResistorFragment" />
-
-
-        <TextView
-            android:id="@+id/pro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="Resistor Color Code"
-            android:textColor="#ffffff" />
-
-
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="5">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_result1"
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:freezesText="true"
+                android:text="FixedIVResistorFragment" />
+
+
+            <TextView
+                android:id="@+id/pro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Resistor Color Code"
+                android:textColor="#ffffff" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="--"
-                android:textColor="#ffffff"
-                android:textSize="40sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:freezesText="true"
-                android:text="×"
-                android:textColor="#ffffff"
-                android:textSize="40sp"
-                android:textStyle="bold" />
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
-                android:layout_weight="0.6"
-                android:gravity="center">
+                android:orientation="horizontal"
+                android:weightSum="5">
 
                 <TextView
-                    android:id="@+id/tv_result2_power"
+                    android:id="@+id/tv_result1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
+                    android:layout_weight="1"
                     android:freezesText="true"
-                    android:text=""
-                    android:textColor="#ffffff"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_result2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left|center"
-                    android:freezesText="true"
-                    android:text="-"
+                    android:gravity="center"
+                    android:text="--"
                     android:textColor="#ffffff"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
-            </FrameLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:freezesText="true"
+                    android:text="×"
+                    android:textColor="#ffffff"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_result3"
-                android:layout_width="wrap_content"
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_weight="0.6"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_result2_power"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:freezesText="true"
+                        android:text=""
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_result2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:freezesText="true"
+                        android:text="-"
+                        android:textColor="#ffffff"
+                        android:textSize="40sp"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tv_result3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:freezesText="true"
+                    android:gravity="center"
+                    android:text="%"
+                    android:textColor="#ffffff"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/tvSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="แปลงหน่วย" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:freezesText="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/resister"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/resistor_4_band" />
+
+                <ImageView
+                    android:id="@+id/img_show"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp" />
+
+                <ImageView
+                    android:id="@+id/img_show2"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp" />
+
+                <ImageView
+                    android:id="@+id/img_show3"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp" />
+
+                <ImageView
+                    android:id="@+id/img_show4"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="%"
-                android:textColor="#ffffff"
-                android:textSize="40sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:weightSum="4">
 
-            <Button
-                android:id="@+id/tvSwitch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="แปลงหน่วย" />
-        </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_rv_resistor_band" />
 
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/resister"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:src="@drawable/resistor_4_band" />
-
-            <ImageView
-                android:id="@+id/img_show"
-                android:layout_width="match_parent"
-                android:layout_height="150dp" />
-
-            <ImageView
-                android:id="@+id/img_show2"
-                android:layout_width="match_parent"
-                android:layout_height="150dp" />
-
-            <ImageView
-                android:id="@+id/img_show3"
-                android:layout_width="match_parent"
-                android:layout_height="150dp" />
-
-            <ImageView
-                android:id="@+id/img_show4"
-                android:layout_width="match_parent"
-                android:layout_height="150dp" />
-
-        </RelativeLayout>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="4">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_rv_resistor_band" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_rv_resistor_band" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_rv_resistor_band" />
 
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_rv_resistor_band" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_rv_resistor_band" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_rv_resistor_band" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_rv_resistor_band" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-</FrameLayout>
+    </FrameLayout>
+</layout>

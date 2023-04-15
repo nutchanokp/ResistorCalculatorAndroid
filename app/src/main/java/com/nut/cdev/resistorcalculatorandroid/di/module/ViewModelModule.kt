@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.nut.cdev.resistorcalculatorandroid.base.ViewModelFactory
 import com.nut.cdev.resistorcalculatorandroid.di.ViewModelKey
 import com.nut.cdev.resistorcalculatorandroid.ui.fixed_resistor.FixedResistorViewModel
+import com.nut.cdev.resistorcalculatorandroid.ui.fixed_resistor.fragment.FixedIVResistorFragmentViewModel
 import com.nut.cdev.resistorcalculatorandroid.ui.main.MainViewModel
 import dagger.Binds
 import dagger.Module
@@ -12,25 +13,19 @@ import dagger.multibindings.IntoMap
 
 @Module
 abstract class ViewModelModule {
-
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
-
     @Binds
     @IntoMap
     @ViewModelKey(FixedResistorViewModel::class)
     abstract fun bindFixedResistorViewModel(viewModel: FixedResistorViewModel): ViewModel
-
     @Binds
     @IntoMap
     @ViewModelKey(MainViewModel::class)
     abstract fun bindMainViewModel(viewModel: MainViewModel): ViewModel
-//    @Binds
-//    @IntoMap
-//    @ViewModelKey(BmiViewModel::class)
-//    abstract fun bindBmiViewModel(viewModel: BmiViewModel): ViewModel
-//    @Binds
-//    @IntoMap
-//    @ViewModelKey(BmrViewModel::class)
-//    abstract fun bindBmrViewModel(viewModel: BmrViewModel): ViewModel
+    @Binds
+    @IntoMap
+    @ViewModelKey(FixedIVResistorFragmentViewModel::class)
+    abstract fun bindFixedIVResistorFragmentViewModel(viewModel: FixedIVResistorFragmentViewModel): ViewModel
+
 }
