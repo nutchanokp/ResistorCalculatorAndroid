@@ -11,12 +11,12 @@
         android:layout_height="wrap_content">
 
 
-        <Button
-            android:id="@+id/btn1black"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnColor"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@color/black"
             android:text="0"
+            android:background="@drawable/selector_btn_red"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

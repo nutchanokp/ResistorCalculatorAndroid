@@ -9,6 +9,12 @@
     <color name="white">#FFFFFFFF</color>
 
 
+    <color name="btn_black_bg_color">#000000</color>
+    <color name="btn_black_bg_color_pressed">#616161</color>
+
+    <color name="btn_brown_bg_color">#93481e</color>
+    <color name="btn_brown_bg_color_pressed">#8D6E63</color>
+
     <color name="btn_red_bg_color">#D50000</color>
     <color name="btn_red_bg_color_pressed">#FF1744</color>
 
@@ -44,6 +50,5 @@
 
     <color name="btn_m_green_bg_color">#ffffff</color>
     <color name="btn_m_green_bg_color_pressed">#00E676</color>
-
 
 </resources>

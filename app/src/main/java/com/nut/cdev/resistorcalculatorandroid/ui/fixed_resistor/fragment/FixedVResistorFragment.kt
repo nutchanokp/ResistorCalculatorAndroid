@@ -51,8 +51,8 @@ class FixedVResistorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val rv1 = requireActivity().findViewById<RecyclerView>(R.id.rv1)
-        rv1.adapter = adapter
+//        val rv1 = requireActivity().findViewById<RecyclerView>(R.id.rv1)
+//        rv1.adapter = adapter
 
         setupRecycler()
 
