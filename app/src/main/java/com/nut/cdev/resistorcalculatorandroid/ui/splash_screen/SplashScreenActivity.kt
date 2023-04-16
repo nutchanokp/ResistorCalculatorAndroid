@@ -61,7 +61,7 @@ class SplashScreenActivity : AppCompatActivity() {
             Toast.makeText(this, "Stable $s", Toast.LENGTH_LONG).show()
             Handler().postDelayed({
                 startActivity(Intent(this, FixedResistorActivity::class.java))
-            }, 10000)
+            }, 500)
         }
 
     }
