@@ -6,6 +6,8 @@ import com.nut.cdev.resistorcalculatorandroid.base.ViewModelFactory
 import com.nut.cdev.resistorcalculatorandroid.di.ViewModelKey
 import com.nut.cdev.resistorcalculatorandroid.ui.fixed_resistor.FixedResistorViewModel
 import com.nut.cdev.resistorcalculatorandroid.ui.fixed_resistor.fragment.FixedIVResistorFragmentViewModel
+import com.nut.cdev.resistorcalculatorandroid.ui.fixed_resistor.fragment.FixedVIResistorFragmentViewModel
+import com.nut.cdev.resistorcalculatorandroid.ui.fixed_resistor.fragment.FixedVResistorFragmentViewModel
 import com.nut.cdev.resistorcalculatorandroid.ui.main.MainViewModel
 import dagger.Binds
 import dagger.Module
@@ -27,5 +29,13 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(FixedIVResistorFragmentViewModel::class)
     abstract fun bindFixedIVResistorFragmentViewModel(viewModel: FixedIVResistorFragmentViewModel): ViewModel
+    @Binds
+    @IntoMap
+    @ViewModelKey(FixedVResistorFragmentViewModel::class)
+    abstract fun bindFixedVResistorFragmentViewModel(viewModel: FixedVResistorFragmentViewModel): ViewModel
+    @Binds
+    @IntoMap
+    @ViewModelKey(FixedVIResistorFragmentViewModel::class)
+    abstract fun bindFixedVIResistorFragmentViewModel(viewModel: FixedVIResistorFragmentViewModel): ViewModel
 
 }

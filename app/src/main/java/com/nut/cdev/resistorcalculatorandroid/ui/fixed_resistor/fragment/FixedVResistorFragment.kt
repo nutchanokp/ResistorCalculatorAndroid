@@ -2,36 +2,249 @@ package com.nut.cdev.resistorcalculatorandroid.ui.fixed_resistor.fragment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.nut.cdev.resistorcalculatorandroid.R
 import com.nut.cdev.resistorcalculatorandroid.adapter.recyclerview.SimpleRecyclerAdapter
+import com.nut.cdev.resistorcalculatorandroid.base.DataBindingFragment
+import com.nut.cdev.resistorcalculatorandroid.databinding.FragmentFixedVResistorBinding
 import com.nut.cdev.resistorcalculatorandroid.databinding.ItemRvResistorBandBinding
+import com.nut.cdev.resistorcalculatorandroid.enums.ResistorFixedIVBarIEnum
+import com.nut.cdev.resistorcalculatorandroid.enums.ResistorFixedIVBarIIEnum
+import com.nut.cdev.resistorcalculatorandroid.enums.ResistorFixedIVBarIIIEnum
+import com.nut.cdev.resistorcalculatorandroid.enums.ResistorFixedIVBarIVEnum
+import javax.inject.Inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FixedVResistorFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class FixedVResistorFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+class FixedVResistorFragment @Inject constructor() :
+    DataBindingFragment<FragmentFixedVResistorBinding, FixedVResistorFragmentViewModel>() {
+
     private var param1: String? = null
     private var param2: String? = null
 
+    var bar1 = 0
+    var bar2 = 0
+
+    @Inject
+    lateinit var factory: ViewModelProvider.Factory
+
     private val adapter by lazy {
-        SimpleRecyclerAdapter<String, ItemRvResistorBandBinding>(
+        SimpleRecyclerAdapter<ResistorFixedIVBarIEnum, ItemRvResistorBandBinding>(
+            R.layout.item_rv_resistor_band
+        )
+    }
+    private val adapterII by lazy {
+        SimpleRecyclerAdapter<ResistorFixedIVBarIIEnum, ItemRvResistorBandBinding>(
+            R.layout.item_rv_resistor_band
+        )
+    }
+    private val adapterIII by lazy {
+        SimpleRecyclerAdapter<ResistorFixedIVBarIIIEnum, ItemRvResistorBandBinding>(
+            R.layout.item_rv_resistor_band
+        )
+    }
+    private val adapterIV by lazy {
+        SimpleRecyclerAdapter<ResistorFixedIVBarIVEnum, ItemRvResistorBandBinding>(
+            R.layout.item_rv_resistor_band
+        )
+    }
+    private val adapterV by lazy {
+        SimpleRecyclerAdapter<ResistorFixedIVBarIVEnum, ItemRvResistorBandBinding>(
             R.layout.item_rv_resistor_band
         )
     }
 
+    override fun getLayoutResId(): Int = R.layout.fragment_fixed_v_resistor
+    override fun createViewModel(savedInstanceState: Bundle?): FixedVResistorFragmentViewModel {
+        return ViewModelProvider(this, factory)[FixedVResistorFragmentViewModel::class.java]
+    }
+
+    override fun onCreateViewModel() {
+        setView()
+    }
+
+    private fun setView() {
+        binding.rvI.adapter = adapter
+        binding.rvII.adapter = adapterII
+        binding.rvIII.adapter = adapterIII
+        binding.rvIV.adapter = adapterIV
+        binding.rvV.adapter = adapterV
+        adapter.setListener(object :
+            SimpleRecyclerAdapter.Listener<ResistorFixedIVBarIEnum, ItemRvResistorBandBinding> {
+            @SuppressLint("UseCompatLoadingForDrawables")
+            override fun onBindViewHolder(
+                binding: ItemRvResistorBandBinding,
+                holder: RecyclerView.ViewHolder,
+                item: ResistorFixedIVBarIEnum?,
+                position: Int
+            ) {
+                if (item == ResistorFixedIVBarIEnum.WHITE) {
+                    binding.btnColor.setTextColor(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.black
+                        )
+                    )
+                }
+                item?.color?.let { binding.btnColor.setBackgroundResource(it) }
+                binding.btnColor.text = item?.name
+
+                binding.btnColor.setOnClickListener {
+                    this@FixedVResistorFragment.binding.tvResult1.text = item?.value.toString()
+
+                    item?.barImage?.let { it1 ->
+                        this@FixedVResistorFragment.binding.ivResistorBarI.setImageResource(
+                            it1
+                        )
+                    }
+
+//                    Glide.with(this@FixedIVResistorFragment).load(item?.barImage)
+//                        .into(this@FixedIVResistorFragment.binding.ivResistorBarI)
+
+                    bar1 = item?.value ?: 0
+                    this@FixedVResistorFragment.binding.tvResult1.text = (bar1 + bar2).toString()
+                }
+            }
+        })
+        adapter.addList(ResistorFixedIVBarIEnum.values().toMutableList())
+
+        adapterII.setListener(
+            object :
+                SimpleRecyclerAdapter.Listener<ResistorFixedIVBarIIEnum, ItemRvResistorBandBinding> {
+                @SuppressLint("UseCompatLoadingForDrawables")
+                override fun onBindViewHolder(
+                    binding: ItemRvResistorBandBinding,
+                    holder: RecyclerView.ViewHolder,
+                    item: ResistorFixedIVBarIIEnum?,
+                    position: Int
+                ) {
+                    if (item == ResistorFixedIVBarIIEnum.WHITE) {
+                        binding.btnColor.setTextColor(
+                            ContextCompat.getColor(
+                                requireContext(),
+                                R.color.black
+                            )
+                        )
+                    }
+                    item?.color?.let { binding.btnColor.setBackgroundResource(it) }
+                    binding.btnColor.text = item?.name
+                    binding.btnColor.setOnClickListener {
+//                        Glide.with(this@FixedIVResistorFragment).load(item?.barImage)
+//                            .into(this@FixedIVResistorFragment.binding.ivResistorBarII)
+
+                        item?.barImage?.let { it1 ->
+                            this@FixedVResistorFragment.binding.ivResistorBarII.setImageResource(
+                                it1
+                            )
+                        }
+                        bar2 = item?.value ?: 0
+                        this@FixedVResistorFragment.binding.tvResult1.text =
+                            (bar1 + bar2).toString()
+                    }
+                }
+
+
+            })
+        adapterII.addList(ResistorFixedIVBarIIEnum.values().toMutableList())
+        adapterIII.setListener(
+            object :
+                SimpleRecyclerAdapter.Listener<ResistorFixedIVBarIIIEnum, ItemRvResistorBandBinding> {
+                @SuppressLint("UseCompatLoadingForDrawables")
+                override fun onBindViewHolder(
+                    binding: ItemRvResistorBandBinding,
+                    holder: RecyclerView.ViewHolder,
+                    item: ResistorFixedIVBarIIIEnum?,
+                    position: Int
+                ) {
+                    if (item == ResistorFixedIVBarIIIEnum.WHITE) {
+                        binding.btnColor.setTextColor(
+                            ContextCompat.getColor(
+                                requireContext(),
+                                R.color.black
+                            )
+                        )
+                    }
+                    item?.color?.let { binding.btnColor.setBackgroundResource(it) }
+
+                    binding.btnColor.text = item?.name
+
+                    binding.btnColor.setOnClickListener {
+
+                        item?.barImage?.let { it1 ->
+                            this@FixedVResistorFragment.binding.ivResistorBarIII.setImageResource(
+                                it1
+                            )
+                        }
+                        this@FixedVResistorFragment.binding.tvResult2.text = item?.value.toString()
+                        this@FixedVResistorFragment.binding.tvResult2Power.text =
+                            item?.valuePower.toString()
+                    }
+                }
+
+
+            })
+        adapterIII.addList(ResistorFixedIVBarIIIEnum.values().toMutableList())
+        adapterIV.setListener(
+            object :
+                SimpleRecyclerAdapter.Listener<ResistorFixedIVBarIVEnum, ItemRvResistorBandBinding> {
+                @SuppressLint("UseCompatLoadingForDrawables")
+                override fun onBindViewHolder(
+                    binding: ItemRvResistorBandBinding,
+                    holder: RecyclerView.ViewHolder,
+                    item: ResistorFixedIVBarIVEnum?,
+                    position: Int
+                ) {
+                    item?.color?.let { binding.btnColor.setBackgroundResource(it) }
+                    binding.btnColor.text = item?.name
+
+                    binding.btnColor.setOnClickListener {
+
+                        item?.barImage?.let { it1 ->
+                            this@FixedVResistorFragment.binding.ivResistorBarIV.setImageResource(
+                                it1
+                            )
+                        }
+                        this@FixedVResistorFragment.binding.tvResult3.text =
+                            "${item?.value.toString()} % Ω"
+                    }
+                }
+
+
+            })
+        adapterIV.addList(ResistorFixedIVBarIVEnum.values().toMutableList())
+        adapterV.setListener(
+            object :
+                SimpleRecyclerAdapter.Listener<ResistorFixedIVBarIVEnum, ItemRvResistorBandBinding> {
+                @SuppressLint("UseCompatLoadingForDrawables")
+                override fun onBindViewHolder(
+                    binding: ItemRvResistorBandBinding,
+                    holder: RecyclerView.ViewHolder,
+                    item: ResistorFixedIVBarIVEnum?,
+                    position: Int
+                ) {
+                    item?.color?.let { binding.btnColor.setBackgroundResource(it) }
+                    binding.btnColor.text = item?.name
+
+                    binding.btnColor.setOnClickListener {
+
+                        item?.barImage?.let { it1 ->
+                            this@FixedVResistorFragment.binding.ivResistorBarIV.setImageResource(
+                                it1
+                            )
+                        }
+                        this@FixedVResistorFragment.binding.tvResult3.text =
+                            "${item?.value.toString()} % Ω"
+                    }
+                }
+
+
+            })
+        adapterV.addList(ResistorFixedIVBarIVEnum.values().toMutableList())
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,49 +254,7 @@ class FixedVResistorFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fixed_v_resistor, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-//        val rv1 = requireActivity().findViewById<RecyclerView>(R.id.rv1)
-//        rv1.adapter = adapter
-
-        setupRecycler()
-
-    }
-
-    private fun setupRecycler() {
-        adapter.setListener(object :
-            SimpleRecyclerAdapter.Listener<String, ItemRvResistorBandBinding> {
-            @SuppressLint("UseCompatLoadingForDrawables")
-            override fun onBindViewHolder(
-                binding: ItemRvResistorBandBinding,
-                holder: RecyclerView.ViewHolder,
-                item: String?,
-                position: Int
-            ) {
-
-            }
-        })
-        adapter.addList(mutableListOf<String>("1", "2"))
-    }
-
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FixedVResistorFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             FixedVResistorFragment().apply {

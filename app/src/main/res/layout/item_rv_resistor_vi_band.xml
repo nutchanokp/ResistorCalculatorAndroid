@@ -13,10 +13,11 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnColor"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:background="@drawable/selector_btn_red"
             android:text="0"
+            android:textSize="12sp"
             android:textColor="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

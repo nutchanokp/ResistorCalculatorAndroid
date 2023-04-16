@@ -17,10 +17,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            <TextView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FixedIVResistorFragment" />
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="ตัวต้านทานแบบ 4 แถบ"
+                android:textSize="20sp" />
 
 
             <TextView
@@ -48,7 +52,6 @@
                     android:freezesText="true"
                     android:gravity="center"
                     android:text="--"
-                    android:textColor="#ffffff"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -57,7 +60,6 @@
                     android:layout_height="wrap_content"
                     android:freezesText="true"
                     android:text="×"
-                    android:textColor="#ffffff"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -74,7 +76,6 @@
                         android:layout_gravity="right"
                         android:freezesText="true"
                         android:text=""
-                        android:textColor="#ffffff"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -85,7 +86,6 @@
                         android:layout_gravity="left|center"
                         android:freezesText="true"
                         android:text="-"
-                        android:textColor="#ffffff"
                         android:textSize="40sp"
                         android:textStyle="bold" />
 
@@ -98,8 +98,7 @@
                     android:layout_weight="1"
                     android:freezesText="true"
                     android:gravity="center"
-                    android:text="%"
-                    android:textColor="#ffffff"
+                    android:text="% Ω"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -108,7 +107,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="แปลงหน่วย" />
+                    android:text="แปลงหน่วย"
+                    android:visibility="gone" />
             </LinearLayout>
 
 
@@ -118,28 +118,28 @@
                 android:gravity="center">
 
                 <ImageView
-                    android:id="@+id/resister"
+                    android:id="@+id/resistor"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:src="@drawable/resistor_4_band" />
 
                 <ImageView
-                    android:id="@+id/img_show"
+                    android:id="@+id/ivResistorBarI"
                     android:layout_width="match_parent"
                     android:layout_height="150dp" />
 
                 <ImageView
-                    android:id="@+id/img_show2"
+                    android:id="@+id/ivResistorBarII"
                     android:layout_width="match_parent"
                     android:layout_height="150dp" />
 
                 <ImageView
-                    android:id="@+id/img_show3"
+                    android:id="@+id/ivResistorBarIII"
                     android:layout_width="match_parent"
                     android:layout_height="150dp" />
 
                 <ImageView
-                    android:id="@+id/img_show4"
+                    android:id="@+id/ivResistorBarIV"
                     android:layout_width="match_parent"
                     android:layout_height="150dp" />
 
@@ -165,8 +165,8 @@
                     android:id="@+id/rvII"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:layout_weight="1"
+                    android:orientation="vertical"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/item_rv_resistor_band" />
 
@@ -175,8 +175,8 @@
                     android:id="@+id/rvIII"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:layout_weight="1"
+                    android:orientation="vertical"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/item_rv_resistor_band" />
 

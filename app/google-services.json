@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "770724056414",
+    "project_id": "resistor-calculator-android",
+    "storage_bucket": "resistor-calculator-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770724056414:android:ae4892af0a184b75b253cf",
+        "android_client_info": {
+          "package_name": "com.nut.cdev.resistorcalculatorandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770724056414-da07sp00i4u123r1thpm6fupn2van4ah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd0xZaWW-T0Ot3zoenbnHsALcqsXNaRAA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "770724056414-da07sp00i4u123r1thpm6fupn2van4ah.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
