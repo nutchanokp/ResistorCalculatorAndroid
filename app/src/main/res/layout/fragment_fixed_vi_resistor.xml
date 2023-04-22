@@ -52,7 +52,7 @@
                     android:freezesText="true"
                     android:gravity="center"
                     android:text="--"
-                    android:textSize="40sp"
+                    android:textSize="30sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:freezesText="true"
                     android:text="×"
-                    android:textSize="40sp"
+                    android:textSize="30sp"
                     android:textStyle="bold" />
 
                 <FrameLayout
@@ -86,7 +86,7 @@
                         android:layout_gravity="left|center"
                         android:freezesText="true"
                         android:text="-"
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:textStyle="bold" />
 
                 </FrameLayout>
@@ -99,7 +99,18 @@
                     android:freezesText="true"
                     android:gravity="center"
                     android:text="% Ω"
-                    android:textSize="40sp"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_result4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:freezesText="true"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="30sp"
                     android:textStyle="bold" />
 
                 <Button
@@ -121,7 +132,7 @@
                     android:id="@+id/resistor"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:src="@drawable/resistor_4_band" />
+                    android:src="@drawable/resistor_6_band" />
 
                 <ImageView
                     android:id="@+id/ivResistorBarI"
@@ -142,13 +153,20 @@
                     android:id="@+id/ivResistorBarIV"
                     android:layout_width="match_parent"
                     android:layout_height="150dp" />
+                <ImageView
+                    android:id="@+id/ivResistorBarV"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp" />
+                <ImageView
+                    android:id="@+id/ivResistorBarVI"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp" />
 
             </RelativeLayout>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:orientation="horizontal"
                 android:weightSum="6">
 
