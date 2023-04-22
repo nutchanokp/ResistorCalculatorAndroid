@@ -16,6 +16,6 @@ enum class ResistorFixedIVBarIIIEnum(
     GREEN(R.drawable.selector_btn_green, R.drawable.r4_c3_green, 10, 5),
     BLUE(R.drawable.selector_btn_blue, R.drawable.r4_c3_blue, 10, 6),
     VIOLET(R.drawable.selector_btn_violet, R.drawable.r4_c3_violet, 10, 7),
-    GREY(R.drawable.selector_btn_grey, R.color.white, 10, 8),
-    WHITE(R.drawable.selector_btn_white, R.color.white, 10, 9)
+    GREY(R.drawable.selector_btn_grey, R.drawable.r4_c3_grey, 10, 8),
+    WHITE(R.drawable.selector_btn_white, R.drawable.r4_c3_white, 10, 9)
 }
