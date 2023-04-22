@@ -3,6 +3,10 @@ package com.nut.cdev.resistorcalculatorandroid.ui.fixed_resistor
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
 import com.nut.cdev.resistorcalculatorandroid.R
 import com.nut.cdev.resistorcalculatorandroid.base.BaseActivity
 import com.nut.cdev.resistorcalculatorandroid.databinding.ActivityFixedResistorBinding
@@ -27,6 +31,7 @@ class FixedResistorActivity : BaseActivity<ActivityFixedResistorBinding, FixedRe
     }
 
     override fun initView() {
+        initAds()
         loadFragment(FixedIVResistorFragment())
     }
 
@@ -74,4 +79,25 @@ class FixedResistorActivity : BaseActivity<ActivityFixedResistorBinding, FixedRe
         transaction.replace(R.id.resistorFragment, fragment)
         transaction.commit()
     }
+
+    private fun initAds() {
+        MobileAds.initialize(this)
+        binding.adView.run {
+            loadAd(AdRequest.Builder().build())
+            adListener = object : AdListener() {
+                override fun onAdClicked() {}
+
+                override fun onAdClosed() {}
+
+                override fun onAdFailedToLoad(adError: LoadAdError) {}
+
+                override fun onAdImpression() {}
+
+                override fun onAdLoaded() {}
+
+                override fun onAdOpened() {}
+            }
+        }
+    }
+
 }

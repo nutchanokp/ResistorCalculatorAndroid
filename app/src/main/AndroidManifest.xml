@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ResistorCalculatorAndroid"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3738126049360824~3538792664" />
         <activity
             android:name=".ui.splash_screen.SplashScreenActivity"
             android:exported="false"></activity>

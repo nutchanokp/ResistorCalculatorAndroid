@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import com.nut.cdev.resistorcalculatorandroid.ext.checkVersionApp
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
@@ -34,6 +35,7 @@ abstract class BaseActivity<Binding : ViewDataBinding, VM : BaseViewModel> :
 
         binding = DataBindingUtil.setContentView(this, getLayoutResId())
         binding.lifecycleOwner = this
+        this.checkVersionApp(supportFragmentManager)
 
         vm = createViewModel(savedInstanceState)
         subscribeToViewModel(vm)
