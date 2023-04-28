@@ -7,6 +7,6 @@
 
 <div style="display:flex;">
 <img alt="App image" src="/graphics/Screenshot_20230423_134124.png" width="30%">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/2_en-US.jpeg" width="30%">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/3_en-US.jpeg" width="30%">
+<img alt="App image" src="/graphics/Screenshot_20230423_134149.png" width="30%">
+<img alt="App image" src="/graphics/Screenshot_20230423_134204.png" width="30%">
 </div>
