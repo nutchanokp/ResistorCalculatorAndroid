@@ -1,7 +1,7 @@
 # ResistorCalculatorAndroid
 
 
-<img src='/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png' alt='Get it on Google Play' width="50%"/>
+<img src='/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png' alt='Get it on Google Play' width="10%"/>
 
 
 
