@@ -10,8 +10,6 @@ android {
     namespace 'com.nut.cdev.resistorcalculatorandroid'
     compileSdk 33
 
-
-
     defaultConfig {
         applicationId "com.nut.cdev.resistorcalculatorandroid"
         minSdk 24
