@@ -6,7 +6,7 @@ Application calculates resistor values.
 
 
 
-<a href='https://play.google.com/store/apps/details?id=com.nut.cdev.resistorcalculatorandroid'><img src='/graphics/Google-Play-&-App-Store-Icon.jpg' alt='Get it on Google Play' height=45/></a>
+<a href='https://play.google.com/store/apps/details?id=com.nut.cdev.resistorcalculatorandroid'><img src='/graphics/google_play_icon.jpg' alt='Get it on Google Play' height=45/></a>
 [//]: # Design & license by: www.freepiker.com
 
 <div style="display:flex;">
