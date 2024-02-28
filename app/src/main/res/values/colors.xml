@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="btn_black_bg_color">#000000</color>
+    <color name="btn_black_bg_color_pressed">#616161</color>
+
+    <color name="btn_brown_bg_color">#93481e</color>
+    <color name="btn_brown_bg_color_pressed">#8D6E63</color>
+
+    <color name="btn_red_bg_color">#D50000</color>
+    <color name="btn_red_bg_color_pressed">#FF1744</color>
+
+    <color name="btn_orange_bg_color">#ff5c00</color>
+    <color name="btn_orange_bg_color_pressed">#FF7043</color>
+
+    <color name="btn_yellow_bg_color">#FFD600</color>
+    <color name="btn_yellow_bg_color_pressed">#FFEA00</color>
+
+    <color name="btn_green_bg_color">#00b72b</color>
+    <color name="btn_green_bg_color_pressed">#00E676</color>
+
+    <color name="btn_blue_bg_color">#0059ff</color>
+    <color name="btn_blue_bg_color_pressed">#2979FF</color>
+
+    <color name="btn_purple_bg_color">#8000ff</color>
+    <color name="btn_purple_bg_color_pressed">#D500F9</color>
+
+    <color name="btn_grey_bg_color">#9E9E9E</color>
+    <color name="btn_grey_bg_color_pressed">#BDBDBD</color>
+
+    <color name="btn_gold_bg_color">#ab7819</color>
+    <color name="btn_gold_bg_color_pressed">#fcb124</color>
+
+    <color name="btn_sever_bg_color">#aba9a9</color>
+    <color name="btn_sever_bg_color_pressed">#dad6d6</color>
+
+    <color name="btn_white_bg_color">#ffffff</color>
+    <color name="btn_white_bg_color_pressed">#dbdbdb</color>
+
+    <color name="btn_silver_bg_color">#aba9a9</color>
+    <color name="btn_silver_bg_color_pressed">#c5c4c4</color>
+
+    <color name="btn_m_green_bg_color">#ffffff</color>
+    <color name="btn_m_green_bg_color_pressed">#00E676</color>
+
+
+    <color name="color_true_blue">#ff0f69e0</color>
+    <color name="alice_blue">#eff3ff</color>
+    <color name="ultramarine_blue">#5d78ff</color>
+    <color name="united_nations_blue">#4b92ff</color>
+    <color name="color_dim_gray">#ff6e6e6e</color>
+    <color name="line_platinum">#E6E6E6</color>
+
+</resources>

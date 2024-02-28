@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/btnFixedIVBand"
+        android:icon="@drawable/resistor_4_band"
+        android:title="4 แถบ" />
+    <item
+        android:id="@+id/btnFixedVBand"
+        android:icon="@drawable/resistor_5_band"
+        android:title="5 แถบ" />
+    <item
+        android:id="@+id/btnFixedVIBand"
+        android:icon="@drawable/resistor_6_band"
+        android:title="6 แถบ" />
+</menu>
