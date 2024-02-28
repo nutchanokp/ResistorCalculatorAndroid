@@ -2,6 +2,9 @@ package com.nut.cdev.resistorcalculatorandroid.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
 import com.nut.cdev.resistorcalculatorandroid.R
 import com.nut.cdev.resistorcalculatorandroid.base.BaseActivity
@@ -19,11 +22,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
     override fun createViewModel(savedInstanceState: Bundle?): MainViewModel {
         return ViewModelProvider(this, factory)[MainViewModel::class.java]
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
     }
 
     override fun initView() {

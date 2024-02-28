@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import com.nut.cdev.resistorcalculatorandroid.Injectable
 import dagger.android.support.AndroidSupportInjection
 
-abstract class DataBindingFragment<Binding : ViewDataBinding, VM : BaseViewModelMVVM> :
+abstract class DataBindingFragment<Binding : ViewDataBinding, VM : BaseViewModel> :
     Fragment(), Injectable {
     private var _binding: Binding? = null
 

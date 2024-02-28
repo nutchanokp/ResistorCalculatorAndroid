@@ -3,7 +3,7 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
-        maven { url "https://jitpack.io" }
+        maven { url = uri("https://www.jitpack.io" ) }
     }
 }
 dependencyResolutionManagement {
@@ -11,9 +11,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url "https://jitpack.io" }
+        maven { url = uri("https://www.jitpack.io" ) }
     }
 }
 
 rootProject.name = "ResistorCalculatorAndroid"
-include ':app'
+include(":app")

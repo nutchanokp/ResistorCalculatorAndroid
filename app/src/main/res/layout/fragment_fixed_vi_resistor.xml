@@ -18,12 +18,12 @@
             android:orientation="vertical">
 
             <TextView
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:text="ตัวต้านทานแบบ 6 แถบ"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
 
 
@@ -52,6 +52,7 @@
                     android:freezesText="true"
                     android:gravity="center"
                     android:text="--"
+                    android:textColor="@color/black"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
@@ -60,6 +61,7 @@
                     android:layout_height="wrap_content"
                     android:freezesText="true"
                     android:text="×"
+                    android:textColor="@color/black"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
@@ -76,6 +78,7 @@
                         android:layout_gravity="right"
                         android:freezesText="true"
                         android:text=""
+                        android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -86,6 +89,7 @@
                         android:layout_gravity="left|center"
                         android:freezesText="true"
                         android:text="-"
+                        android:textColor="@color/black"
                         android:textSize="30sp"
                         android:textStyle="bold" />
 
@@ -99,6 +103,7 @@
                     android:freezesText="true"
                     android:gravity="center"
                     android:text="% Ω"
+                    android:textColor="@color/black"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
@@ -110,18 +115,42 @@
                     android:freezesText="true"
                     android:gravity="center"
                     android:text=""
+                    android:textColor="@color/black"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/tvSwitch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="แปลงหน่วย"
-                    android:visibility="gone" />
             </LinearLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvTolerance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_toStartOf="@+id/btnReset"
+                    android:freezesText="true"
+                    android:gravity="center"
+                    android:text="คลาดเคลื่อน : %"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnReset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:text="เพิ่มเติม"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -153,10 +182,12 @@
                     android:id="@+id/ivResistorBarIV"
                     android:layout_width="match_parent"
                     android:layout_height="150dp" />
+
                 <ImageView
                     android:id="@+id/ivResistorBarV"
                     android:layout_width="match_parent"
                     android:layout_height="150dp" />
+
                 <ImageView
                     android:id="@+id/ivResistorBarVI"
                     android:layout_width="match_parent"
@@ -170,61 +201,155 @@
                 android:orientation="horizontal"
                 android:weightSum="6">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvI"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_rv_resistor_vi_band" />
+                    android:orientation="vertical">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvII"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="แถบที่1"
+                        android:textColor="@color/black"
+                        android:textSize="9sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvI"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_rv_resistor_vi_band" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_rv_resistor_vi_band" />
+                    android:orientation="vertical">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="แถบที่2"
+                        android:textColor="@color/black"
+                        android:textSize="9sp" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvIII"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvII"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_rv_resistor_vi_band" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_rv_resistor_vi_band" />
+                    android:orientation="vertical">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvIV"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="แถบที่3"
+                        android:textColor="@color/black"
+                        android:textSize="9sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvIII"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_rv_resistor_vi_band" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_rv_resistor_vi_band" />
+                    android:orientation="vertical">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvV"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="แถบที่4"
+                        android:textColor="@color/black"
+                        android:textSize="9sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvIV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_rv_resistor_vi_band" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_rv_resistor_vi_band" />
+                    android:orientation="vertical">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvVI"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="แถบที่5"
+                        android:textColor="@color/black"
+                        android:textSize="9sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_rv_resistor_vi_band" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_rv_resistor_vi_band" />
+                    android:orientation="vertical">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="แถบที่6"
+                        android:textColor="@color/black"
+                        android:textSize="9sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvVI"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_rv_resistor_vi_band" />
+                </LinearLayout>
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
