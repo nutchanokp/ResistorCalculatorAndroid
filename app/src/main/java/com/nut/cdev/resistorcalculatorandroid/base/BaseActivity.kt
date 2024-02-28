@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import com.nut.cdev.resistorcalculatorandroid.core.router.MainRouter
 import com.nut.cdev.resistorcalculatorandroid.ext.checkVersionApp
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -25,6 +26,8 @@ abstract class BaseActivity<Binding : ViewDataBinding, VM : BaseViewModel> :
     protected lateinit var binding: Binding
     protected lateinit var vm: VM
 
+    lateinit var router : MainRouter
+
     override val coroutineContext: CoroutineContext get() = Job() + Dispatchers.Main
 
     protected abstract fun getLayoutResId(): Int
@@ -36,7 +39,7 @@ abstract class BaseActivity<Binding : ViewDataBinding, VM : BaseViewModel> :
         binding = DataBindingUtil.setContentView(this, getLayoutResId())
         binding.lifecycleOwner = this
         this.checkVersionApp(supportFragmentManager)
-
+        router = MainRouter(this)
         vm = createViewModel(savedInstanceState)
         subscribeToViewModel(vm)
 

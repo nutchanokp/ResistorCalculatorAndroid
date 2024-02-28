@@ -16,16 +16,11 @@ import com.nut.cdev.resistorcalculatorandroid.enums.ResistorFixedVBarIIEnum
 import com.nut.cdev.resistorcalculatorandroid.enums.ResistorFixedVBarIIIEnum
 import com.nut.cdev.resistorcalculatorandroid.enums.ResistorFixedVBarIVEnum
 import com.nut.cdev.resistorcalculatorandroid.enums.ResistorFixedVBarVEnum
+import com.nut.cdev.resistorcalculatorandroid.ui.fixed_resistor.FixedResistorViewModel
 import javax.inject.Inject
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class FixedVResistorFragment @Inject constructor() :
-    DataBindingFragment<FragmentFixedVResistorBinding, FixedVResistorFragmentViewModel>() {
-
-    private var param1: String? = null
-    private var param2: String? = null
+    DataBindingFragment<FragmentFixedVResistorBinding, FixedResistorViewModel>() {
 
     var bar1 = 0
     var bar2 = 0
@@ -61,8 +56,8 @@ class FixedVResistorFragment @Inject constructor() :
     }
 
     override fun getLayoutResId(): Int = R.layout.fragment_fixed_v_resistor
-    override fun createViewModel(savedInstanceState: Bundle?): FixedVResistorFragmentViewModel {
-        return ViewModelProvider(this, factory)[FixedVResistorFragmentViewModel::class.java]
+    override fun createViewModel(savedInstanceState: Bundle?): FixedResistorViewModel {
+        return ViewModelProvider(this, factory)[FixedResistorViewModel::class.java]
     }
 
     override fun onCreateViewModel() {
@@ -190,7 +185,7 @@ class FixedVResistorFragment @Inject constructor() :
 
 
             })
-        adapterIII.addList(ResistorFixedVBarIIIEnum.values().toMutableList())
+        adapterIII.addList(ResistorFixedVBarIIIEnum.entries.toMutableList())
         adapterIV.setListener(
             object :
                 SimpleRecyclerAdapter.Listener<ResistorFixedVBarIVEnum, ItemRvResistorBandBinding> {
@@ -228,7 +223,7 @@ class FixedVResistorFragment @Inject constructor() :
 
 
             })
-        adapterIV.addList(ResistorFixedVBarIVEnum.values().toMutableList())
+        adapterIV.addList(ResistorFixedVBarIVEnum.entries.toMutableList())
         adapterV.setListener(
             object :
                 SimpleRecyclerAdapter.Listener<ResistorFixedVBarVEnum, ItemRvResistorBandBinding> {
@@ -253,37 +248,23 @@ class FixedVResistorFragment @Inject constructor() :
                     binding.btnColor.setOnClickListener {
 
                         item?.barImage?.let { it1 ->
-                            this@FixedVResistorFragment.binding.ivResistorBarIV.setImageResource(
+                            this@FixedVResistorFragment.binding.ivResistorBarV.setImageResource(
                                 it1
                             )
                         }
-                        this@FixedVResistorFragment.binding.tvResult3.text =
-                            "${item?.value.toString()} % Ω"
+                        this@FixedVResistorFragment.binding.tvTolerance.text =
+                            "คลาดเคลื่อน ± ${item?.value.toString()} %"
                     }
                 }
 
 
             })
-        adapterV.addList(ResistorFixedVBarVEnum.values().toMutableList())
+        adapterV.addList(ResistorFixedVBarVEnum.entries.toMutableList())
 
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FixedVResistorFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance() = FixedVResistorFragment()
     }
 }

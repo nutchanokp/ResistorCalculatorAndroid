@@ -1,6 +1,7 @@
 package com.nut.cdev.resistorcalculatorandroid.ui.fixed_resistor
 
 import android.os.Bundle
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.ads.AdListener
@@ -24,10 +25,6 @@ class FixedResistorActivity : BaseActivity<ActivityFixedResistorBinding, FixedRe
 
     override fun createViewModel(savedInstanceState: Bundle?): FixedResistorViewModel {
         return ViewModelProvider(this, factory)[FixedResistorViewModel::class.java]
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
     }
 
     override fun initView() {

@@ -21,13 +21,24 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        create("release") {
+            keyAlias = "resistorcalculator"
+            keyPassword = "resistor42538601"
+            storeFile = file("Z:/PROJECTS/keystore/ResistorCalculatorAndroid/keystore-resistorcalculator")
+            storePassword = "resistor42538601"
+        }
+    }
+
+
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
@@ -45,41 +56,45 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.12.0")
+    implementation(libs.core.ktx)
 
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(libs.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.espresso.core)
 
     // Multidex
-    implementation("androidx.multidex:multidex:2.0.1")
+    implementation(libs.androidx.multidex)
     // Dagger 2
-    kapt("com.google.dagger:dagger-compiler:2.51")
-    kapt("com.google.dagger:dagger-android-processor:2.51")
-    implementation("com.google.dagger:dagger-android-support:2.51")
-    implementation("com.google.dagger:dagger:2.51")
+    kapt(libs.dagger.compiler)
+    kapt(libs.dagger.android.processor)
+    implementation(libs.dagger.android.support)
+    implementation(libs.dagger)
 
-    kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.9.0")
+    kapt(libs.kotlinx.metadata.jvm)
     // RX
-    implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
-    implementation("io.reactivex.rxjava2:rxjava:2.2.21")
-    implementation("io.reactivex.rxjava2:rxkotlin:2.4.0")
+    implementation(libs.rxandroid)
+    implementation(libs.rxjava)
+    implementation(libs.rxkotlin)
     // ADS
-    implementation("com.google.android.gms:play-services-ads:22.6.0")
+    implementation(libs.play.services.ads)
     // GLIDE
-    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation(libs.glide)
     // Firebase
     //noinspection BomWithoutPlatform
-    implementation( "com.google.firebase:firebase-bom:32.7.2")
-    implementation("com.google.firebase:firebase-analytics:21.5.1")
-    implementation("com.google.firebase:firebase-config:21.6.1")
+    implementation(libs.firebase.bom)
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.config)
 
-    implementation("com.github.Marvel999:Android-Loading-Animation:1.0.0")
+    implementation(libs.android.loading.animation)
+
+    implementation(libs.androidx.core.splashscreen)
+
+    implementation(libs.lottie)
 
 }
 
