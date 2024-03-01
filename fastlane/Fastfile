@@ -1,0 +1,64 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Build build APK DEV"
+  lane :buildDev do
+    gradle(task: 'clean')
+    gradle(task: 'assemble', build_type: 'Debug')
+  end
+
+  desc "Deploy a new version to the Google Play (Beta)"
+  lane :deploy_beta do
+     gradle(task: "clean assembleRelease")
+     supply(track: 'beta')
+   end
+
+  desc "Submit a new version to the internal track in the Google Play"
+  lane :deploy_internal do
+    gradle(task: "clean")
+    gradle(
+        task: 'bundle',
+        build_type: 'Release'
+    )
+    upload_to_play_store(track: 'internal')
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :deploy do
+    gradle(task: "clean assembleRelease")
+    upload_to_play_store
+  end
+
+  desc "Deploy a Dev app new version to Firebase App Distribution Chanel"
+  lane :distributeDev do
+    buildDev
+    firebase_app_distribution(
+      app: "1:770724056414:android:ae4892af0a184b75b253cf",
+      groups: "all",
+      android_artifact_type: "APK",
+      apk_path: "app/build/outputs/apk/debug/app-debug.apk",
+      release_notes: "Deploy")
+  end
+
+
+end
